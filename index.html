@@ -1,20 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ofertas Promo NC</title>
-.banner-site {
-  width: 100%;
-  overflow: hidden;
-}
-
-.banner-site img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-</style>
+<style>
 * {
   margin: 0;
   padding: 0;
@@ -23,14 +14,14 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: #f6f5fa;
-  color: #242238;
+  background: #f5f0ff;
+  color: #24183d;
 }
 
 header {
-  background: #211b38;
+  background: #170d2b;
   color: white;
-  padding: 22px 8%;
+  padding: 20px 6%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -44,80 +35,131 @@ header {
 }
 
 .logo span {
-  color: #b69cff;
+  color: #bd82ff;
+}
+
+nav {
+  display: flex;
+  gap: 22px;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  margin-left: 20px;
-  font-size: 14px;
+  font-weight: bold;
 }
 
-.hero {
-  background: linear-gradient(120deg, #33245b, #7046c8);
+nav a:hover {
+  color: #bd82ff;
+}
+
+/* BANNER PRINCIPAL */
+.banner {
+  min-height: 280px;
+  padding: 35px 7%;
+  background:
+    radial-gradient(circle at 80% 50%, #8b28e8 0, transparent 35%),
+    linear-gradient(120deg, #170728, #421078 55%, #16072a);
   color: white;
-  padding: 65px 8%;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  overflow: hidden;
+  position: relative;
 }
 
-.hero h1 {
-  font-size: 38px;
-  margin-bottom: 15px;
+.banner::before {
+  content: "％";
+  position: absolute;
+  right: 28%;
+  top: -65px;
+  font-size: 290px;
+  color: #ffffff0b;
+  font-weight: bold;
 }
 
-.hero p {
-  color: #e5dcff;
-  font-size: 16px;
-  margin-bottom: 25px;
+.banner-text {
+  position: relative;
+  z-index: 1;
 }
 
-.search {
-  max-width: 500px;
-  margin: auto;
+.banner h1 {
+  font-size: clamp(35px, 6vw, 65px);
+  line-height: 1.05;
+  font-style: italic;
+  font-weight: 900;
 }
 
-.search input {
-  width: 100%;
-  padding: 16px;
-  border: none;
-  border-radius: 12px;
-  outline: none;
-  font-size: 15px;
+.banner h1 span {
+  color: #c58aff;
 }
 
+.banner p {
+  margin-top: 16px;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.banner-art {
+  font-size: clamp(65px, 12vw, 125px);
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 8px 15px #0008);
+}
+
+/* CONTEÚDO */
 .container {
-  max-width: 1150px;
-  margin: 40px auto;
+  max-width: 1200px;
+  margin: 35px auto;
   padding: 0 20px;
 }
 
+.search {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.search input {
+  flex: 1;
+  padding: 15px;
+  border: 1px solid #d8c5f5;
+  border-radius: 12px;
+  font-size: 16px;
+  outline: none;
+}
+
+.search input:focus {
+  border-color: #7026c9;
+}
+
 .section-title {
+  margin-bottom: 18px;
   font-size: 25px;
-  margin-bottom: 20px;
 }
 
 .categories {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 }
 
 .categories button {
   border: none;
-  background: white;
-  color: #392b60;
-  padding: 12px 20px;
+  padding: 13px 22px;
   border-radius: 30px;
-  cursor: pointer;
+  background: #e6d8fa;
+  color: #492080;
   font-weight: bold;
-  box-shadow: 0 3px 12px #0000000d;
+  cursor: pointer;
+  font-size: 15px;
 }
 
-.categories button.active,
-.categories button:hover {
-  background: #7046c8;
+.categories button:hover,
+.categories button.active {
+  background: #7026c9;
   color: white;
 }
 
@@ -131,32 +173,31 @@ nav a {
   background: white;
   border-radius: 17px;
   overflow: hidden;
-  box-shadow: 0 5px 20px #241a4010;
-  transition: 0.25s;
+  box-shadow: 0 5px 18px #30105a18;
+  transition: .2s;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px #241a4020;
 }
 
 .product-image {
-  height: 180px;
-  background: linear-gradient(135deg, #eee7ff, #d9ccff);
+  height: 175px;
+  background: linear-gradient(135deg, #eee3ff, #d4baff);
   display: flex;
-  align-items: center;
   justify-content: center;
-  font-size: 65px;
+  align-items: center;
+  font-size: 75px;
 }
 
 .card-content {
-  padding: 20px;
+  padding: 19px;
 }
 
 .tag {
   display: inline-block;
-  background: #eee8ff;
-  color: #7046c8;
+  background: #eee3ff;
+  color: #7026c9;
   padding: 6px 10px;
   border-radius: 20px;
   font-size: 11px;
@@ -165,48 +206,55 @@ nav a {
 }
 
 .card h3 {
-  font-size: 17px;
-  margin-bottom: 10px;
+  font-size: 18px;
+  margin-bottom: 9px;
 }
 
 .card p {
-  color: #777386;
-  font-size: 13px;
-  line-height: 1.5;
-  margin-bottom: 18px;
+  color: #70677e;
+  font-size: 14px;
+  min-height: 42px;
+  margin-bottom: 17px;
 }
 
 .buy {
   display: block;
-  background: #7046c8;
+  background: #7026c9;
   color: white;
-  text-align: center;
-  text-decoration: none;
   padding: 13px;
   border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
   font-weight: bold;
 }
 
 .buy:hover {
-  background: #5631a6;
+  background: #4e168e;
 }
 
 .empty {
   display: none;
+  grid-column: 1 / -1;
   text-align: center;
   padding: 30px;
-  color: #777386;
-  grid-column: 1 / -1;
+}
+
+.notice {
+  margin-top: 30px;
+  padding: 16px;
+  background: #e9dcfa;
+  border-radius: 12px;
+  font-size: 13px;
+  color: #513774;
 }
 
 footer {
-  background: #211b38;
-  color: #c9c2d9;
+  background: #170d2b;
+  color: white;
   text-align: center;
-  padding: 30px 20px;
-  margin-top: 60px;
-  font-size: 13px;
-  line-height: 1.8;
+  padding: 28px 15px;
+  margin-top: 55px;
+  font-size: 14px;
 }
 
 @media(max-width: 600px) {
@@ -215,16 +263,21 @@ footer {
     text-align: center;
   }
 
-  nav a {
-    margin: 0 8px;
+  nav {
+    justify-content: center;
   }
 
-  .hero {
-    padding: 50px 20px;
+  .banner {
+    min-height: 220px;
+    padding: 28px 20px;
   }
 
-  .hero h1 {
-    font-size: 29px;
+  .banner-art {
+    font-size: 60px;
+  }
+
+  .banner p {
+    font-size: 15px;
   }
 }
 </style>
@@ -233,96 +286,113 @@ footer {
 <body>
 
 <header>
-  <div class="logo">OFERTAS <span>PROMO NC</span></div>
-
+  <div class="logo">🛒 OFERTAS <span>PROMO NC</span></div>
   <nav>
     <a href="#inicio">Início</a>
-    <a href="#produtos">Ofertas</a>
+    <a href="#ofertas">Ofertas</a>
+    <a href="#categorias">Categorias</a>
   </nav>
 </header>
 
-<section class="banner-site" id="inicio">
-  <img src="banner-ofertas.png"
-       alt="Ofertas Promo NC">
+<!-- BANNER -->
+<section class="banner" id="inicio">
+  <div class="banner-text">
+    <h1>OFERTAS<br><span>PROMO NC</span></h1>
+    <p>As melhores ofertas em um só lugar!</p>
+  </div>
+  <div class="banner-art">🛍️ 🎮 💻</div>
 </section>
 
-<main class="container" id="produtos">
+<main class="container">
 
-  <h2 class="section-title">Explore as categorias</h2>
-
-  <div class="categories">
-    <button class="active" data-filter="todos">Todos</button>
-    <button data-filter="gamer">🎮 Área Gamer</button>
-    <button data-filter="casa">🏠 Casa</button>
-    <button data-filter="tecnologia">💻 Tecnologia</button>
+  <div class="search">
+    <input
+      type="search"
+      id="search"
+      placeholder="🔎 Pesquise um produto..."
+    >
   </div>
 
-  <h2 class="section-title">🔥 Produtos em destaque</h2>
+  <h2 class="section-title" id="categorias">
+    Explore as categorias
+  </h2>
+
+  <div class="categories">
+    <button class="active" data-category="todos">Todos</button>
+    <button data-category="gamer">🎮 Área Gamer</button>
+    <button data-category="casa">🏠 Casa</button>
+    <button data-category="tecnologia">💻 Tecnologia</button>
+  </div>
+
+  <h2 class="section-title" id="ofertas">
+    🔥 Produtos em destaque
+  </h2>
 
   <div class="products" id="products">
 
-    <article class="card" data-category="gamer">
+    <article class="card" data-category="gamer"
+      data-name="mouse gamer logitech g305">
       <div class="product-image">🖱️</div>
       <div class="card-content">
         <span class="tag">ÁREA GAMER</span>
         <h3>Mouse Gamer Logitech G305</h3>
         <p>Mouse sem fio para melhorar sua experiência nos jogos.</p>
-        <a class="buy" href="COLE_SEU_LINK_DO_MOUSE"
-          target="_blank" rel="noopener noreferrer">
-          Ver oferta →
-        </a>
+        <a class="buy" href="COLE_SEU_LINK_DA_SHOPEE"
+          target="_blank" rel="noopener noreferrer">Ver oferta →</a>
       </div>
     </article>
 
-    <article class="card" data-category="gamer">
+    <article class="card" data-category="gamer"
+      data-name="headset gamer">
       <div class="product-image">🎧</div>
       <div class="card-content">
         <span class="tag">ÁREA GAMER</span>
         <h3>Headset Gamer</h3>
-        <p>Confira esta opção para seu setup gamer.</p>
-        <a class="buy" href="COLE_SEU_LINK_DO_HEADSET"
-          target="_blank" rel="noopener noreferrer">
-          Ver oferta →
-        </a>
+        <p>Som imersivo para suas partidas.</p>
+        <a class="buy" href="COLE_SEU_LINK_DA_SHOPEE"
+          target="_blank" rel="noopener noreferrer">Ver oferta →</a>
       </div>
     </article>
 
-    <article class="card" data-category="tecnologia">
+    <article class="card" data-category="tecnologia"
+      data-name="teclado mecanico">
       <div class="product-image">⌨️</div>
       <div class="card-content">
         <span class="tag">TECNOLOGIA</span>
         <h3>Teclado Mecânico</h3>
-        <p>Uma opção para quem busca melhorar seu espaço de trabalho.</p>
-        <a class="buy" href="COLE_SEU_LINK_DO_TECLADO"
-          target="_blank" rel="noopener noreferrer">
-          Ver oferta →
-        </a>
+        <p>Mais desempenho e conforto no seu dia a dia.</p>
+        <a class="buy" href="COLE_SEU_LINK_DA_SHOPEE"
+          target="_blank" rel="noopener noreferrer">Ver oferta →</a>
       </div>
     </article>
 
-    <article class="card" data-category="casa">
+    <article class="card" data-category="casa"
+      data-name="organizador para casa">
       <div class="product-image">🏠</div>
       <div class="card-content">
         <span class="tag">CASA</span>
         <h3>Organizador para Casa</h3>
-        <p>Confira um produto útil para o dia a dia.</p>
-        <a class="buy" href="COLE_SEU_LINK_DE_CASA"
-          target="_blank" rel="noopener noreferrer">
-          Ver oferta →
-        </a>
+        <p>Deixe seu espaço mais organizado.</p>
+        <a class="buy" href="COLE_SEU_LINK_DA_SHOPEE"
+          target="_blank" rel="noopener noreferrer">Ver oferta →</a>
       </div>
     </article>
 
     <p class="empty" id="empty">Nenhum produto encontrado.</p>
-
   </div>
+
+  <p class="notice">
+    Alguns links são de afiliados. Podemos receber uma comissão
+    por compras realizadas através deles, sem custo adicional para você.
+  </p>
+
 </main>
 
 <footer>
-  <strong>OFERTAS PROMO NC</strong>
+  <h3>🛒 OFERTAS PROMO NC</h3>
   <p>Ofertas e oportunidades em um só lugar.</p>
-  <p>Alguns links são de afiliados. Podemos receber comissão por compras realizadas através deles.</p>
-  <p>© 2026 Ofertas Promo NC</p>
+  <br>
+  <p>© 2026 Ofertas Promo NC. Todos os direitos reservados.</p>
 </footer>
 
 <script>
@@ -334,30 +404,33 @@ const empty = document.getElementById("empty");
 let category = "todos";
 
 function filterProducts() {
-  const term = search.value.toLowerCase();
-  let visible = 0;
+  const term = search.value.toLowerCase().trim();
+  let count = 0;
 
   cards.forEach(card => {
-    const name = card.innerText.toLowerCase();
-    const matchesName = name.includes(term);
-    const matchesCategory =
-      category === "todos" ||
-      card.dataset.category === category;
+    const categoryOK =
+      category === "todos" || card.dataset.category === category;
 
-    const show = matchesName && matchesCategory;
-    card.style.display = show ? "block" : "none";
+    const text = (
+      card.dataset.name + " " + card.innerText
+    ).toLowerCase();
 
-    if (show) visible++;
+    const searchOK = text.includes(term);
+    const visible = categoryOK && searchOK;
+
+    card.style.display = visible ? "" : "none";
+
+    if (visible) count++;
   });
 
-  empty.style.display = visible ? "none" : "block";
+  empty.style.display = count === 0 ? "block" : "none";
 }
 
 buttons.forEach(button => {
   button.addEventListener("click", () => {
     buttons.forEach(item => item.classList.remove("active"));
     button.classList.add("active");
-    category = button.dataset.filter;
+    category = button.dataset.category;
     filterProducts();
   });
 });
@@ -367,3 +440,4 @@ search.addEventListener("input", filterProducts);
 
 </body>
 </html>
+
