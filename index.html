@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -7,253 +7,360 @@
 <title>Ofertas Promo NC</title>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-background:linear-gradient(180deg,#0f0f0f,#1b1b1b);
-color:white;
-text-align:center;
-padding:20px;
+body {
+  font-family: Arial, sans-serif;
+  background: #f6f5fa;
+  color: #242238;
 }
 
-.container{
-max-width:500px;
-margin:auto;
+header {
+  background: #211b38;
+  color: white;
+  padding: 22px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
-.logo{
-font-size:34px;
-font-weight:bold;
-color:#00ff88;
-margin-top:20px;
+.logo {
+  font-size: 25px;
+  font-weight: bold;
 }
 
-.sub{
-margin:10px 0 25px;
-color:#ccc;
-font-size:15px;
+.logo span {
+  color: #b69cff;
 }
 
-.alerta{
-background:#ff0000;
-padding:10px;
-border-radius:10px;
-font-weight:bold;
-margin-bottom:20px;
-animation:pulse 1s infinite;
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 14px;
 }
 
-@keyframes pulse{
-0%{transform:scale(1);}
-50%{transform:scale(1.03);}
-100%{transform:scale(1);}
+.hero {
+  background: linear-gradient(120deg, #33245b, #7046c8);
+  color: white;
+  padding: 65px 8%;
+  text-align: center;
 }
 
-.card{
-background:#1f1f1f;
-padding:18px;
-border-radius:15px;
-margin-bottom:15px;
-box-shadow:0 0 10px rgba(0,255,136,0.15);
+.hero h1 {
+  font-size: 38px;
+  margin-bottom: 15px;
 }
 
-.card h2{
-font-size:20px;
-margin-bottom:8px;
+.hero p {
+  color: #e5dcff;
+  font-size: 16px;
+  margin-bottom: 25px;
 }
 
-.card p{
-font-size:14px;
-color:#ccc;
-margin-bottom:12px;
+.search {
+  max-width: 500px;
+  margin: auto;
 }
 
-.botao{
-display:block;
-background:#00ff88;
-color:#111;
-padding:14px;
-border-radius:12px;
-text-decoration:none;
-font-weight:bold;
-font-size:16px;
-transition:0.3s;
+.search input {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  outline: none;
+  font-size: 15px;
 }
 
-.botao:hover{
-transform:scale(1.03);
-background:#00cc6d;
+.container {
+  max-width: 1150px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
-.whats{
-background:#25D366;
-color:white;
+.section-title {
+  font-size: 25px;
+  margin-bottom: 20px;
 }
 
-.insta{
-background:#E1306C;
-color:white;
+.categories {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
 }
 
-footer{
-margin-top:30px;
-font-size:12px;
-color:#777;
+.categories button {
+  border: none;
+  background: white;
+  color: #392b60;
+  padding: 12px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 3px 12px #0000000d;
+}
+
+.categories button.active,
+.categories button:hover {
+  background: #7046c8;
+  color: white;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 22px;
+}
+
+.card {
+  background: white;
+  border-radius: 17px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px #241a4010;
+  transition: 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px #241a4020;
+}
+
+.product-image {
+  height: 180px;
+  background: linear-gradient(135deg, #eee7ff, #d9ccff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 65px;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.tag {
+  display: inline-block;
+  background: #eee8ff;
+  color: #7046c8;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #777386;
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+
+.buy {
+  display: block;
+  background: #7046c8;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  padding: 13px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.buy:hover {
+  background: #5631a6;
+}
+
+.empty {
+  display: none;
+  text-align: center;
+  padding: 30px;
+  color: #777386;
+  grid-column: 1 / -1;
+}
+
+footer {
+  background: #211b38;
+  color: #c9c2d9;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 60px;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+@media(max-width: 600px) {
+  header {
+    justify-content: center;
+    text-align: center;
+  }
+
+  nav a {
+    margin: 0 8px;
+  }
+
+  .hero {
+    padding: 50px 20px;
+  }
+
+  .hero h1 {
+    font-size: 29px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<header>
+  <div class="logo">OFERTAS <span>PROMO NC</span></div>
 
-<div class="https://img.freepik.com/psd-gratuitas/mega-oferta-logotipo-3d-para-campanhas-publicitarias-mega-oferta_314999-1786.jpg?semt=ais_hybrid&w=740&q=80">🔥 Ofertas Promo NC</div>
+  <nav>
+    <a href="#inicio">Início</a>
+    <a href="#produtos">Ofertas</a>
+  </nav>
+</header>
 
-<div class="sub">Promoções reais • Achadinhos diários • Links atualizados</div>
+<section class="hero" id="inicio">
+  <h1>As melhores ofertas estão aqui!</h1>
+  <p>Encontre produtos incríveis sem perder tempo procurando.</p>
 
-<div class="alerta">⚠️ OFERTAS LIMITADAS HOJE</div>
+  <div class="search">
+    <input type="text" id="search"
+      placeholder="🔎 Pesquise um produto...">
+  </div>
+</section>
 
-<div class="card">
-<h2>🎮 Setup Gamer PC GAMER RYZEN 5 5600GT, 16GB DDR4, SSD SATA 480GB, FONTE 500W + KIT GAMER 4 EM 1 + MONITOR 19 polegadas</h2>
-<p>Mouse, teclado, headset e acessórios  R$3.796,99 Em até 12x R$ 316,48 sem juros.</p>
-<a class="botao" href="https://amzn.to/48ExBc3">🛒 Ver Oferta</a>
-</div>
+<main class="container" id="produtos">
 
-<div class="card">
-<h2>👕 Kit 5 Camisetas Dry All Black Alpha Co </h2>
-<p>Produto famoso nas redes sociais com preço baixo R$141,02 OU R$130,97 no Pix com cupom Oferta relâmpago a partir de 00:00/ 06 de maio >.</p>
-<a class="botao" href="https://s.shopee.com.br/6L0wcHMmfs">🔥 Comprar Agora</a>
-</div>
+  <h2 class="section-title">Explore as categorias</h2>
 
-<div class="card">
-<h2>🏠 Utilidades Para Casa</h2>
-<p>Itens úteis e baratos que valem a pena 16,90.</p>
-<a class="botao" href="https://s.shopee.com.br/gMgVNJYwD">💥 Ver Promoção</a>
-</div>
+  <div class="categories">
+    <button class="active" data-filter="todos">Todos</button>
+    <button data-filter="gamer">🎮 Área Gamer</button>
+    <button data-filter="casa">🏠 Casa</button>
+    <button data-filter="tecnologia">💻 Tecnologia</button>
+  </div>
 
-<div class="card">
-<h2>👕 Moda Feminina</h2>
-<p>Roupas e acessórios em oferta.</p>
-<a class="botao" href="https://s.shopee.com.br/4VZIqg7mIB">🛍️ Conferir</a>
-</div>
+  <h2 class="section-title">🔥 Produtos em destaque</h2>
 
-<div class="card">
-<a class="botao whats" href="https://chat.whatsapp.com/K2JKh3ypvEZ30HQEpoSLkx">📲 Entrar no Grupo WhatsApp</a>
-</div>
+  <div class="products" id="products">
 
-<div class="card">
-<a class="botao insta" href="https://www.instagram.com/kadu_nc/">📸 Seguir no Instagram</a>
-</div>
+    <article class="card" data-category="gamer">
+      <div class="product-image">🖱️</div>
+      <div class="card-content">
+        <span class="tag">ÁREA GAMER</span>
+        <h3>Mouse Gamer Logitech G305</h3>
+        <p>Mouse sem fio para melhorar sua experiência nos jogos.</p>
+        <a class="buy" href="COLE_SEU_LINK_DO_MOUSE"
+          target="_blank" rel="noopener noreferrer">
+          Ver oferta →
+        </a>
+      </div>
+    </article>
+
+    <article class="card" data-category="gamer">
+      <div class="product-image">🎧</div>
+      <div class="card-content">
+        <span class="tag">ÁREA GAMER</span>
+        <h3>Headset Gamer</h3>
+        <p>Confira esta opção para seu setup gamer.</p>
+        <a class="buy" href="COLE_SEU_LINK_DO_HEADSET"
+          target="_blank" rel="noopener noreferrer">
+          Ver oferta →
+        </a>
+      </div>
+    </article>
+
+    <article class="card" data-category="tecnologia">
+      <div class="product-image">⌨️</div>
+      <div class="card-content">
+        <span class="tag">TECNOLOGIA</span>
+        <h3>Teclado Mecânico</h3>
+        <p>Uma opção para quem busca melhorar seu espaço de trabalho.</p>
+        <a class="buy" href="COLE_SEU_LINK_DO_TECLADO"
+          target="_blank" rel="noopener noreferrer">
+          Ver oferta →
+        </a>
+      </div>
+    </article>
+
+    <article class="card" data-category="casa">
+      <div class="product-image">🏠</div>
+      <div class="card-content">
+        <span class="tag">CASA</span>
+        <h3>Organizador para Casa</h3>
+        <p>Confira um produto útil para o dia a dia.</p>
+        <a class="buy" href="COLE_SEU_LINK_DE_CASA"
+          target="_blank" rel="noopener noreferrer">
+          Ver oferta →
+        </a>
+      </div>
+    </article>
+
+    <p class="empty" id="empty">Nenhum produto encontrado.</p>
+
+  </div>
+</main>
 
 <footer>
-© 2026 Ofertas Promo NC
+  <strong>OFERTAS PROMO NC</strong>
+  <p>Ofertas e oportunidades em um só lugar.</p>
+  <p>Alguns links são de afiliados. Podemos receber comissão por compras realizadas através deles.</p>
+  <p>© 2026 Ofertas Promo NC</p>
 </footer>
 
-</div>
+<script>
+const search = document.getElementById("search");
+const buttons = document.querySelectorAll(".categories button");
+const cards = document.querySelectorAll(".card");
+const empty = document.getElementById("empty");
+
+let category = "todos";
+
+function filterProducts() {
+  const term = search.value.toLowerCase();
+  let visible = 0;
+
+  cards.forEach(card => {
+    const name = card.innerText.toLowerCase();
+    const matchesName = name.includes(term);
+    const matchesCategory =
+      category === "todos" ||
+      card.dataset.category === category;
+
+    const show = matchesName && matchesCategory;
+    card.style.display = show ? "block" : "none";
+
+    if (show) visible++;
+  });
+
+  empty.style.display = visible ? "none" : "block";
+}
+
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    buttons.forEach(item => item.classList.remove("active"));
+    button.classList.add("active");
+    category = button.dataset.filter;
+    filterProducts();
+  });
+});
+
+search.addEventListener("input", filterProducts);
+</script>
 
 </body>
 </html>
-```
-
-
-
-<h2 class="categoria">🎮 Área Gamer</h2>
-
-<div class="card">
-<h2>🎮Bundle Nintendo Switch + Super Mario Bros. Wonder + 3 Meses de Assinatura Nintendo Switch Online
- </h2>
-<p>De: R$2.299,00 por R$1.992,00 Oferta limitada.</p>
-<a class="botao" href="https://amzn.to/4n57jp9">🛒 Ver Oferta</a>
-</div>
-
-<div class="card">
-<h2>🎮 Microsoft Xbox Series S 512 GB All-Digital Console de jogos + 1 controle sem fio Xbox, branco - resolução de 1440p, até 120 FPS, 802.11ac 2x2 WiFi - WEPGPY HDMI Cabo</h2>
-<p>3.199,00R$.</p>
-<a class="botao" href="https://amzn.to/42afIOI">🛒 Ver Oferta</a>
-</div>
-
-<div class="card">
-<h2>🎮 Console PlayStation 5 Slim Digital 825GB</h2>
-<p>R$4.047,91 no Pix OU Google pay R$4.427,41</p>
-<a class="botao" href="https://s.shopee.com.br/AADguGqCuU">🛒 Ver Oferta</a>
-</div>
-
-<div class="card">
-<h2>🎮 Nintendo Switch Lite Desbloqueado Novo</h2>
-<p>R$1.747,08 no Pix. Ou R$1.899,00 com outros métodos de pagamento.</p>
-<a class="botao" href="https://s.shopee.com.br/1Vvk0knmza">🛒 Ver Oferta</a>
-</div>
-
-<div class="card">
-<h2>🎮 Xbox Series X</h2>
-<p>R$5.099,00.</p>
-<a class="botao" href="https://amzn.to/42JIJki">🛒 Ver Oferta</a>
-</div>
-
-<div class="card">
-<h2>🎮 Nintendo Switch 2 256GB LCD Gray Novo Lacrado Lançamento</h2>
-<p>R$3.999,00.</p>
-<a class="botao" href="https://s.shopee.com.br/50VcC8tSeP">🛒 Ver Oferta</a>
-</div>
-
-<div class="card">
-<h2>🎮 PC GAMER RYZEN 5 5600GT, 16GB DDR4, SSD M.2 NVME 256GB, VEGA 7,</h2>
-<p>R$3.166,99 Em até 12x R$ 263,98 sem juros.</p>
-<a class="botao" href="https://amzn.to/42RzLS4">🛒 Ver Oferta</a>
-</div>
-
-<div class="card">
-<h2>🎮 PC GAMER ZYN RYZEN 7 5700X, B450M, 16GB RAM, NVME 1TB, NVIDIA RTX 4060 8GB, GABINETE 3 GANS RGB (BRANCO)</h2>
-<p>R$7.890,00 Em até 12x R$ 657,50 sem juros.</p>
-<a class="botao" href="https://amzn.to/48HY3S6">🛒 Ver Oferta</a>
-</div>
-
-
-<h2 class="categoria">💪 Área Fitness</h2>
-
-<div class="card">
-<h2>Bicicleta Bike Ergometrica Spinning Academia Fitness Profissional 120kg</h2>
-<p>R$599,99.</p>
-<a class="botao" href="https://s.shopee.com.br/6VKPxGox4i">🛒 Ver Oferta</a>
-</div>
-
-
-<div class="card">
-<h2>Whey Protein 100% Concentrado Max Titanium 900g Refil</h2>
-<p>R$599,99.</p>
-<a class="botao" href="https://s.shopee.com.br/9zuIDvWX0Z">🛒 Ver Oferta</a>
-</div>
-
-<div class="card">
-<h2>Bicicleta Aro 29 Alumínio Gott 21v Freio a Disco T-Force</h2>
-<p>R$764,00.</p>
-<a class="botao" href="https://s.shopee.com.br/6pxIB3Hnsd">🛒 Ver Oferta</a>
-</div>
-
-
-<h2 class="categoria">💪 Área do Jogador(a) </h2>
-
-<div class="card">
-<h2>Chuteira Society Penalty Bravo Y 3.0 adulto-unissex</h2>
-<p>R$132,99 - R$174,90.</p>
-<a class="botao" href="https://amzn.to/42f1CLT">🛒 Ver Oferta</a>
-</div>
-
-<div class="card">
-<h2>CHUTEIRA FUTSAL Penalty Penalty Chuteira Futsal Max 500 Ecokint XXI adulto-unissex</h2>
-<p>Por:	R$148,88 - R$209,88.</p>
-<a class="botao" href="https://amzn.to/42f1CLT">🛒 Ver Oferta</a>
-</div>
-
-<h2 class="categoria">🏠 Coisas da casa </h2>
-
-<div class="card">
-<h2>Mini Processador Triturador Sem Fio Elétrico 250ML De Alimentos Para Legumes Alho Gengibre</h2>
-<p>R$23,99.</p>
-<a class="botao" href="https://s.shopee.com.br/4qCDqFTTij">🛒 Ver Oferta</a>
-</div>
