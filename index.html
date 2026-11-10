@@ -280,6 +280,48 @@ footer {
     font-size: 15px;
   }
 }
+/* PÁGINAS DOS DEPARTAMENTOS */
+[hidden] {
+  display: none !important;
+}
+
+.department-page {
+  min-height: 450px;
+  padding-top: 35px;
+}
+
+.back-button {
+  background: #7026c9;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.back-button:hover {
+  background: #4e168e;
+}
+
+.department-title {
+  font-size: 30px;
+  color: #492080;
+  margin-bottom: 10px;
+}
+
+.department-description {
+  color: #70677e;
+  margin-bottom: 25px;
+}
+
+.department-products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 22px;
+}
+
 </style>
 </head>
 
@@ -388,6 +430,26 @@ footer {
 
 </main>
 
+<!-- PÁGINA DOS DEPARTAMENTOS -->
+<section class="container department-page" id="departmentPage" hidden>
+
+  <button class="back-button" onclick="backToHome()">
+    ← Voltar ao início
+  </button>
+
+  <h1 class="department-title" id="departmentTitle">
+    Área Gamer
+  </h1>
+
+  <p class="department-description" id="departmentDescription">
+    Confira nossos produtos selecionados!
+  </p>
+
+  <div class="department-products" id="departmentProducts">
+  </div>
+
+</section>
+
 <footer>
   <h3>🛒 OFERTAS PROMO NC</h3>
   <p>Ofertas e oportunidades em um só lugar.</p>
@@ -396,46 +458,72 @@ footer {
 </footer>
 
 <script>
-const search = document.getElementById("search");
-const buttons = document.querySelectorAll(".categories button");
-const cards = document.querySelectorAll(".card");
-const empty = document.getElementById("empty");
 
-let category = "todos";
+const homePage = document.querySelector("main");
+const departmentPage = document.getElementById("departmentPage");
+const departmentTitle = document.getElementById("departmentTitle");
+const departmentDescription = document.getElementById("departmentDescription");
+const departmentProducts = document.getElementById("departmentProducts");
 
-function filterProducts() {
-  const term = search.value.toLowerCase().trim();
-  let count = 0;
+const products = document.querySelectorAll("#products .card");
 
-  cards.forEach(card => {
-    const categoryOK =
-      category === "todos" || card.dataset.category === category;
+const departments = {
+  gamer: {
+    title: "🎮 Área Gamer",
+    description: "Os melhores achadinhos para seu setup e suas partidas."
+  },
 
-    const text = (
-      card.dataset.name + " " + card.innerText
-    ).toLowerCase();
+  casa: {
+    title: "🏠 Casa",
+    description: "Produtos úteis para deixar sua casa ainda melhor."
+  },
 
-    const searchOK = text.includes(term);
-    const visible = categoryOK && searchOK;
+  tecnologia: {
+    title: "💻 Tecnologia",
+    description: "Confira nossos achadinhos de tecnologia."
+  },
 
-    card.style.display = visible ? "" : "none";
+  todos: {
+    title: "🔥 Todas as ofertas",
+    description: "Confira todos os produtos disponíveis na loja."
+  }
+};
 
-    if (visible) count++;
+function openDepartment(category) {
+  const department = departments[category];
+
+  if (!department) return;
+
+  departmentTitle.textContent = department.title;
+  departmentDescription.textContent = department.description;
+
+  departmentProducts.innerHTML = "";
+
+  products.forEach(product => {
+    if (category === "todos" || product.dataset.category === category) {
+      departmentProducts.appendChild(product.cloneNode(true));
+    }
   });
 
-  empty.style.display = count === 0 ? "block" : "none";
+  homePage.hidden = true;
+  departmentPage.hidden = false;
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-buttons.forEach(button => {
+function backToHome() {
+  departmentPage.hidden = true;
+  homePage.hidden = false;
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+document.querySelectorAll(".categories button").forEach(button => {
   button.addEventListener("click", () => {
-    buttons.forEach(item => item.classList.remove("active"));
-    button.classList.add("active");
-    category = button.dataset.category;
-    filterProducts();
+    openDepartment(button.dataset.category);
   });
 });
 
-search.addEventListener("input", filterProducts);
 </script>
 
 </body>
